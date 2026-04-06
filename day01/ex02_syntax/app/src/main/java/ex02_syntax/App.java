@@ -11,6 +11,7 @@ import java.util.HashSet; // 집합
 public class App { // 클래스 선언
     // 진입점(entry point) - 프로그램이 시작되는 메서드
     public static void main(String[] args) {
+        // 기본형, Primitive datatype
         int intVal = 10; // 4byte
         long lngVal = 983241729437249873l; // 8byte 길이가 지정됨
         float fltVal = 3.141592f; // 4byte

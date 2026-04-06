@@ -71,5 +71,10 @@ public class App {
         for (int i=0; i < numbers.length; i++){
             System.out.println(numbers[i]);
         }
+
+        // foreach 문
+        for (String number: numbers) {
+            System.out.println(number);
+        }
     }
 }

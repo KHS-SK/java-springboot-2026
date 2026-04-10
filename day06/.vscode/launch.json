@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-WebboardApplication<webboard>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.pknu26.webboard.WebboardApplication",
+      "projectName": "webboard",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

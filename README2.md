@@ -1044,6 +1044,162 @@ NOCYCLE;
 - service/UserserviceImpl 클래스 생성
 - dto/LoginUser 클래스 생성 - 브라우저에 보관되는 세션에 필요정보만 클래스로 생성
 - controller/UserController 클래스 생성
+- templates/user/join.html 생성
+
+![alt text](image-31.png)
+
+## 10일차
+
+### MyBatis StudyGroup 계속
+
+#### 회원가입/로그인 계속
+
+- templates/user/login.html 페이지 생성
+- controller/UserController 클래스에 로그인관련 메서드 추가
+
+![alt text](image-32.png)
+
+#### 부트스트랩 템플릿 적용
+
+- [부트스트랩 공식 사이트](https://getbootstrap.com/docs/5.3/examples/)(예제 확인)
+  - 부트스트랩 예제 페이지, Download examples 다운로드 후 압축해제
+  - 각 기능별 폴더에서 참조해서 사용
+- [스타트 부트스트랩](https://startbootstrap.com/)
+- [mdbootstrap](https://mdbootstrap.com/freebies/)
+- [bootstrapmade](https://bootstrapmade.com/)
+
+#### 부트스트랩 기능 구현
+
+- Navbar/index.html 소스 참조
+- 태그 복사/붙여넣기
+- 필요기능 추가
+
+## 11일차
+
+#### 게시판 계정 연결
+
+- 세션과 연결
+
+#### 게시판 이슈(현재 문제점)
+
+1. [ ] 게시글 상세에서 이름대신 로그인 아이디가 표시
+2. [x] 본인 글이 아닌게 수정됨
+3. [x] 에디터 적용 후 상세보기 화면 깨짐
+
+- th:text -> th:utext 로 변경
+
+4. [ ] 게시판 다른 페이지에서 게시글 삭제 후 첫번째 페이지로 전환
+5. [ ] 댓글 작성 및 삭제기능 아무나 가능
+6. [ ] Navigation(nav) 동작없는 검색 입력
+
+#### 게시판 웹 에디터 적용
+
+- 티스토리 웹 에디터
+  ![alt text](image-33.png)
+
+- 웹데이터 리스트
+  - CK에디터: https://ckeditor.com/ckeditor-5/ 유/무료 웹에디터 1등
+  - 트럼보우YG: https://alex-d.github.io/Trumbowyg/ 심플 무료 웹에디터
+
+- Trumbowyg 적용
+  1. trumbowyg 관련 css, js파일 static 저장
+  2. laytout.html 수정
+
+```html
+<!doctype html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  th:fragment="layout(content, pageScripts)"
+  data-bs-theme="auto"
+>
+  ...
+
+  <head>
+    <!-- trumbowyg용 css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      th:href="@{/trumbowyg/ui/trumbowyg.min.css}"
+    />
+  </head>
+  ...
+
+  <body>
+    ...
+    <!-- 페이지 개별 스크립트는 맨 마지막 -->
+    <script th:replace="${pageScripts} ?: ~{}"></script>
+  </body>
+</html>
+```
+
+3. form.html 수정
+
+```html
+<!doctype html>
+<!-- 추가된 pageScript 레이아웃 영역 작성 -->
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{layout :: layout(~{::content}, ~{::pageScripts})}"
+>
+  ...
+  <!-- pageScripts를 사용하는 페이지 -->
+  <script th:fragment="pageScripts">
+    $(function () {
+      $("#content").trumbowyg();
+    });
+  </script>
+</html>
+```
+
+4. trumbowyg 에디터를 사용하는 않는 나머지 html
+
+```html
+<!doctype html>
+<!-- pageScripts를 사용 안하기 때문에 ~{} 표현 -->
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{layout :: layout(~{::content}, ~{})}"
+></html>
+```
+
+#### 관리자 기능
+
+- 관리자 구분
+  - `ROLE_USER`: 일반 사용자
+  - `ROLE_ADMIN`: 관리자
+
+- 게시글 삭제
+
+#### 웹사이트 홈 페이지
+
+- HomeController 생성
+- templates/home.html 생성
+
+- bootstrap 공식 예제 carousel 활용
+
+![alt text](image-34.png)
+
+#### 스터디 모집 DB설계
+
+- 스터디모집 ERD
+  ![alt text](image-35.png)
+
+- 테이블 관계
+  - 스터디 종륲 카테고리 1개는 여러개의 스터디글에 포함
+    - `categories 1 : N study_posts`
+  - 사용자 1명은 여러개의 스터디 글을 쓸 수 있음
+    - `user_account 1 : N study_posts`
+  - 사용자 1명은 여러개의 댓글을 쓸 수 있음
+    - `user_account 1 : N comment`
+  - 스터디 게시글 1개에는 여러개의 댓글이 적힘
+    - `study_posts 1 : N comments`
+  - 사용자 1명은 여러 스터디 게시글에 신청가능
+    - `user_account 1 : N study_applications`
+  - 스터디 게시글 1개에는 여러 신청이 들어옴
+    - `study_posts 1 : N study_applications`
 
 #### 스터디모집 웹사이트
 

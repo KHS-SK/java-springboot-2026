@@ -1,0 +1,70 @@
+<!doctype html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{layout :: layout(~{::content})}"
+>
+  <div th:fragment="content" class="container my-3">
+    <div class="row">
+      <div class="col">
+        <div class="card my-3 shadow-sm">
+          <div class="card-body">
+            <h4 th:text="${book.title}" class="card-title"></h4>
+
+            <hr />
+
+            <p><strong>저자:</strong> <span th:text="${book.author}"></span></p>
+            <p>
+              <strong>출판사:</strong> <span th:text="${book.publisher}"></span>
+            </p>
+            <p><strong>ISBN:</strong> <span th:text="${book.isbn}"></span></p>
+            <p>
+              <strong>카테고리:</strong>
+              <span th:text="${book.category}"></span>
+            </p>
+
+            <hr />
+
+            <p>
+              <strong>가격:</strong> <span th:text="${book.price}"></span> 원
+            </p>
+            <p>
+              <strong>재고:</strong> <span th:text="${book.stock}"></span> 권
+            </p>
+
+            <hr />
+
+            <p><strong>설명:</strong></p>
+            <p th:text="${book.description}" class="card-text"></p>
+
+            <hr />
+
+            <div class="d-flex justify-content-end">
+              <div class="badge bg-info text-dark p-2 text-start">
+                <div>
+                  등록일:
+                  <span
+                    th:text="${#temporals.format(book.createdAt, 'yyyy-MM-dd HH:mm')}"
+                  ></span>
+                </div>
+
+                <div th:if="${book.updatedAt != null}">
+                  수정일:
+                  <span
+                    th:text="${#temporals.format(book.updatedAt, 'yyyy-MM-dd HH:mm')}"
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-end">
+          <a th:href="@{/book/list}" class="btn btn-secondary btn-sm">
+            <i class="bi bi-list"></i> 목록
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>

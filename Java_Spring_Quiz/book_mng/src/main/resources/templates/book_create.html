@@ -1,0 +1,81 @@
+<!doctype html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{layout :: layout(~{::content})}"
+>
+  <div th:fragment="content" class="container my-3">
+    <div class="row">
+      <div class="col">
+        <h4 class="my-3 pb-2">도서 등록</h4>
+
+        <form th:action="@{/book/create}" th:object="${bookForm}" method="post">
+          <!-- 에러 메시지 -->
+          <div
+            class="alert alert-danger"
+            role="alert"
+            th:if="${#fields.hasAnyErrors()}"
+          >
+            <div
+              th:each="error : ${#fields.allErrors()}"
+              th:text="${error}"
+            ></div>
+          </div>
+
+          <!-- 제목 -->
+          <div class="mb-3">
+            <label class="form-label">제목</label>
+            <input th:field="*{title}" type="text" class="form-control" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">저자</label>
+            <input th:field="*{author}" type="text" class="form-control" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">출판사</label>
+            <input th:field="*{publisher}" type="text" class="form-control" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">ISBN</label>
+            <input th:field="*{isbn}" type="text" class="form-control" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">카테고리</label>
+            <input th:field="*{category}" type="text" class="form-control" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">가격</label>
+            <input th:field="*{price}" type="number" class="form-control" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">수량</label>
+            <input th:field="*{stock}" type="number" class="form-control" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">설명</label>
+            <textarea
+              th:field="*{description}"
+              class="form-control"
+              rows="4"
+            ></textarea>
+          </div>
+
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary btn-sm">저장</button>
+
+            <a th:href="@{/book/list}" class="btn btn-secondary btn-sm">
+              목록
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</html>

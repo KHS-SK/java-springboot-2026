@@ -93,7 +93,10 @@ StudyGroup
 #### TIP
 
 - Controller는 사용자의 요청을 받아서 Service로 전달한 뒤 받은 결과를 View로 출력하는 기능
-- Service는
+- Service는 요청에서 Model로 데이터 요청, 돌려받아서 비즈니스 로직 처리
+- View는 돌려받은 데이터들을 표현
+
+![alt text](image-38.png)
 
 #### 필요이슈
 
@@ -130,10 +133,63 @@ StudyGroup
 - [x] 전체 Footer 작업
   - Bootstrap 클래스만으로 가능
 
--facivon 추가
+![alt text](image-39.png)
 
-- [x] 에러 페이지 필요
+## 15일차
+
+### StudyGroup 계속
+
+#### 관리자 홈관리화면
+
+- 컨텐츠 관리
+  - Stie 테이블
+  - dto, Site 클래스
+  - validation, SiteForm 클래스
+  - controller, SiteController 클래스
+  - mapper, SiteMapper 인터페이스
+  - templates/mapper, SiteMapper.xml
+  - service, SiteService 클래스
+  - controller, HomeController home 메서드 수정
+
+  ![alt text](image-41.png)
+
+- 이미지 관리
+  - application.properties에 저장경로 설정!
+  - Site_Image 테이블 생성
+  - dto, SiteImage 클래스
+  - validation, SiteImageForm 클래스
+  - controller, SiteImageController 클래스
+  - mapper, SiteImageMapper 인터페이스
+  - templates/mapper, SiteImageMapper.xml
+  - service, SiteImageService 클래스
+  - controller, HomeController home 메서드 수정
+
+## 16일차
+
+### StudyGroup 계속
+
+#### 관리자 홈관리 중 이미지 처리
+
+- 이미지 관리 계속
+  -
+
+#### 남은 이슈
+
+- [x] favicon(favorite + icon) 추가
+  - 자동인식방법 resources/static/favicon.ico
+  - png to ico 변환 필요
+
+  ![alt text](image-40.png)
+
+- [x]에러 페이지 필요 - 디자인만 잘하면 됨
+  - 404 에러: Page Not Found
+  - 500 에러: Internal Server Error
+
 - home.html 관리자가 관리할 화면 생성
+  - Hero 이미지: 웹 전체 화면을 채우는 배경이미지
+  - Carousel 이미지: 이미지가 일정시간마다 전환, 또는 버튼클릭으로 전환하는 디자인
+  - 현재화면
+
 - home.html 동작 바인딩
 - Spring Security
 - JWT

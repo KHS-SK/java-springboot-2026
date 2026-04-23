@@ -1,0 +1,34 @@
+## 오늘 뭐 먹지? 웹 사이트 만들기
+
+### 구조
+- Spring Boot
+- Spring MVC
+- Oracle
+- MyBatis
+- Thymeleaf
+- Lombok
+
+### 스키마
+```sql
+CREATE TABLE FOOD (
+    ID          NUMBER PRIMARY KEY,
+    NAME        VARCHAR2(200) NOT NULL,
+    CATEGORY    VARCHAR2(50) NOT NULL,
+    RATING      NUMBER(1) CHECK (RATING BETWEEN 1 AND 5),
+    MEMO        VARCHAR2(1000),
+    EAT_DATE    DATE NOT NULL,
+    CREATED_AT  DATE DEFAULT SYSDATE NOT NULL
+);
+-- ID 자동 증가 PK
+-- NAME 음식이름
+-- CATEGORY 음식종류 '한식', '일식', '중식', '양식' 등...
+-- RATING 1 ~ 5 점수
+-- MEMO 음식에 대한 품평
+-- EAT_DATE 음식 먹은 날짜
+-- CREATED_AT 작성일자
+
+CREATE SEQUENCE FOOD_SEQ
+START WITH 1
+INCREMENT BY 1
+NOCACHE;
+```

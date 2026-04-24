@@ -189,7 +189,70 @@ StudyGroup
 
 https://github.com/user-attachments/assets/4d4fa37e-b8b7-4adf-913c-e2e97cd8922f
 
+#### 추가개발 이슈
 
+- [ ] 댓글 삭제 확인창 띄우기
+- [ ] Footer 영역, Privacy(개인정보처리방침), Terms(정책) 추가 개발필요
+- [ ] 각 입력태그에 PlaceHolder 추가
+- [ ] 게시판 댓글 작성자 로그인 아이디 바로 표시하게
+
+- [ ] Features, Gallary 부분 관리자 데이터 처리, 홈화면 이미지 표시
+  - Carousel 기능과 동일하게 구현
+
+  ![alt text](image-44.png)
+
+  ![alt text](image-45.png)
+
+- [ ] 게시판 첨부파일 추가
+- [ ] 관리자 사이트컨텐츠 등록화면, 컨텐츠 키를 콤보박스로 변경해보기
+- [ ] 관리자 사이트이미지 등록화면, 이미지 키를 콤보박스로 변경해보기
+- [ ] 회원가입시 이메일과 주소등 추가 등록데이터 입력
+- [ ] 로그인 후 비번변경이나 개인정보 수정화면
+
+### Spring Security
+
+#### 개요
+
+- Spring 기반 애플리케이션 인증(Autentication), 권한(Authorization)을 담당하는 보안 프레임워크
+  - 인증: 로그인 기능, 세션처리
+  - 권한: 접근제어, 글쓰기 가능여부
+
+- 기본동작
+  - 요청 -> 필터체인통과
+  - 인증여부 확인
+  - 미 로그인시 로그인페이지로 이동
+  - 로그인 성공 후 세션에 사용자 정보 저장
+
+#### 진행순서
+
+- 의존성 추가
+- 비밀번호 암호화 PasswordEncoder 등록
+- UserDetailsService 생성
+- SecurityConfig 생성
+- 로그인 페이지 연결
+- 권한별 URL 제한
+- Thymeleaf 로그인/관리자 조건 처리
+
+#### Spring Security 개발
+
+- build.gradle 의존성 추가
+- 실행화면
+
+  ![alt text](image-46.png)
+
+## 17일차
+
+### Spring Security
+
+...
+
+### JWT
+
+#### 개요
+
+- JSON Web Token: 로그인 후에 서버에서 발급하는 토큰 기반의 인증방식
+  - React, Node.js 등의 다른 프론트엔드와 연계하는 풀스태객발시 사용하는 인증방식
+  - 서버에 세션을 저장안함. 토큰으로 인증 대체
 
 #### 남은 이슈
 
@@ -207,6 +270,8 @@ https://github.com/user-attachments/assets/4d4fa37e-b8b7-4adf-913c-e2e97cd8922f
   - Hero 이미지: 웹 전체 화면을 채우는 배경이미지
   - Carousel 이미지: 이미지가 일정시간마다 전환, 또는 버튼클릭으로 전환하는 디자인
   - 현재화면
+
+- [x] 세군데 있던 checkAdmin 메서드 정리. AdminHelper 클래스 생성
 
 - home.html 동작 바인딩
 - Spring Security

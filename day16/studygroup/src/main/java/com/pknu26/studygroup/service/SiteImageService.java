@@ -64,7 +64,7 @@ public class SiteImageService {
 
     public void update(SiteImageForm form) throws Exception {
 
-        // TODO
+        // HACK
     }
 
     public void delete(Long id) {

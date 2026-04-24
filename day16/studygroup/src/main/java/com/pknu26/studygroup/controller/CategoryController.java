@@ -5,8 +5,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pknu26.studygroup.config.AdminHelper;
 import com.pknu26.studygroup.dto.Category;
-import com.pknu26.studygroup.dto.LoginUser;
 import com.pknu26.studygroup.service.CategoryService;
 import com.pknu26.studygroup.validation.CategoryForm;
 
@@ -28,7 +28,7 @@ public class CategoryController {
     //  localhost:8080/admin/categories
     @GetMapping
     public String list(Model model, HttpSession session) {
-        checkAdmin(session);
+        AdminHelper.checkAdmin(session);
         model.addAttribute("categoryList", categoryService.getCategoryList());
         return "admin/category/list";
     }
@@ -36,7 +36,7 @@ public class CategoryController {
     // localhost:8080/admin/categories/create
     @GetMapping("/create")
     public String createForm(Model model, HttpSession session) {
-        checkAdmin(session);
+        AdminHelper.checkAdmin(session);
         model.addAttribute("categoryForm", new CategoryForm());
         return "admin/category/form";
     }
@@ -47,7 +47,7 @@ public class CategoryController {
                          BindingResult bindingResult, 
                          Model model,
                          HttpSession session) {
-        checkAdmin(session);
+        AdminHelper.checkAdmin(session);
 
         if (bindingResult.hasErrors()) {
             return "admin/category/form";
@@ -62,7 +62,7 @@ public class CategoryController {
     public String editForm(@PathVariable Long categoryId,
                            Model model,
                            HttpSession session) {
-        checkAdmin(session);
+        AdminHelper.checkAdmin(session);
 
         Category category = this.categoryService.getCategory(categoryId);
         
@@ -78,7 +78,7 @@ public class CategoryController {
     public String edit(@PathVariable Long categoryId,                       
                         @Valid @ModelAttribute("categoryForm") CategoryForm categoryForm,
                         BindingResult bindingResult, HttpSession session) {
-        checkAdmin(session);
+        AdminHelper.checkAdmin(session);
 
         if (bindingResult.hasErrors()) {
             return "admin/category/form";
@@ -91,19 +91,10 @@ public class CategoryController {
 
     @PostMapping("/delete/{categoryId}")
     public String delete(@PathVariable Long categoryId, HttpSession session) {
-        checkAdmin(session);
+        AdminHelper.checkAdmin(session);
         this.categoryService.deleteCategory(categoryId);
         return "redirect:/admin/categories";
     }
 
-    // 한번 더 관리자 체크
-    private void checkAdmin(HttpSession session) {
-        LoginUser loginUser = (LoginUser) session.getAttribute("loginUser");
 
-        if (loginUser == null || !"ROLE_ADMIN".equals(loginUser.getRole())) {
-            throw new RuntimeException("관리자만 접근할 수 있습니다.");
-
-            // TODO: 에러페이지 추가 필요!
-        }
-    }
 }

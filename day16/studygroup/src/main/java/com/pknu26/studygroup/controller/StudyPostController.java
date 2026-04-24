@@ -56,7 +56,7 @@ public class StudyPostController {
             return "redirect:/user/login"; // 로그인안한 사람은 게시판 글 못씀
         }
 
-        // TODO : 로그인한 사용자면 볼수 있도록 변경
+        // HACK : 로그인한 사용자면 볼수 있도록 변경
 
         // 단순 리스트 조회 시 사용한 방법
         // List<StudyPost> postList = this.studyPostService.getPostList();

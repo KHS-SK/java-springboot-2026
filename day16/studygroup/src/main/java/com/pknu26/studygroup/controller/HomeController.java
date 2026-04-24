@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.pknu26.studygroup.dto.HomeContent;
-import com.pknu26.studygroup.dto.Site;
 import com.pknu26.studygroup.service.SiteImageService;
 import com.pknu26.studygroup.service.SiteService;
 

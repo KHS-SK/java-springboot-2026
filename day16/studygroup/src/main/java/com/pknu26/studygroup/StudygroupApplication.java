@@ -34,7 +34,7 @@ public class StudygroupApplication implements CommandLineRunner {
 		Path uploadDir = Path.of(fileProperties.getUploadDir());
 		Files.createDirectories(uploadDir);
 
-		// TODO Auto-generated method stub
+		// HACK Auto-generated method stub
 		System.out.println("uploadDir = " + fileProperties.getUploadDir());
 		System.out.println("accessUrl = " + fileProperties.getAccessUrl());
 	}

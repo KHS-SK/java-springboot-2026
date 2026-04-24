@@ -155,14 +155,16 @@ StudyGroup
 
 - 이미지 관리
   - application.properties에 저장경로 설정!
+  - config, Fileproperties 클래스 추가
+
+    ![alt text](image-42.png)
+
+  - config, WebMvcConfig 클래스 추가
   - Site_Image 테이블 생성
   - dto, SiteImage 클래스
   - validation, SiteImageForm 클래스
-  - controller, SiteImageController 클래스
   - mapper, SiteImageMapper 인터페이스
-  - templates/mapper, SiteImageMapper.xml
-  - service, SiteImageService 클래스
-  - controller, HomeController home 메서드 수정
+  - resource/mapper, SiteImageMapper.xml
 
 ## 16일차
 
@@ -171,7 +173,19 @@ StudyGroup
 #### 관리자 홈관리 중 이미지 처리
 
 - 이미지 관리 계속
-  -
+  - service, SiteImageService 클래스
+  - controller, SiteImageController 클래스
+  - controller, HomeController home 메서드 수정
+  - templates/admin/siteImage list.html, form.html 작업
+
+  ![alt text](image-43.png)
+
+#### 홈화면 이미지 표시
+
+- 이미지 표시
+  - mapper, SiteImageMapper findAllActive() 메서드 추가, xml 추가
+  - service, SiteImageService 메서드 변경
+  - home, HomeController home 메서드 로직 변경
 
 #### 남은 이슈
 

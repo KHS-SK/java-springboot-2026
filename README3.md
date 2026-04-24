@@ -187,6 +187,10 @@ StudyGroup
   - service, SiteImageService 메서드 변경
   - home, HomeController home 메서드 로직 변경
 
+https://github.com/user-attachments/assets/4d4fa37e-b8b7-4adf-913c-e2e97cd8922f
+
+
+
 #### 남은 이슈
 
 - [x] favicon(favorite + icon) 추가

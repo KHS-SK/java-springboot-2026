@@ -300,6 +300,12 @@ This generated password is for development use only. ~
 
 - 테스트 콘트롤러
 
+## 18일차
+
+### JWT 계속
+
+### 구글 로그인
+
 #### 남은 이슈
 
 - [x] favicon(favorite + icon) 추가

@@ -40,22 +40,22 @@ StudyGroup
 ```
 
 - 카테고리 CRUD
-  - dto, Category, 클래스 생성
-  - validation, CategoryForm 클래스 생성
-  - mapper, CategoryMapper, StudyPostMapper 인터페이스, xml 생성
-  - service, CategoryService, StudyPostService 클래스 생성 <!--, CategoryServiceImpl, StudyPostServiceImpl -->
-  - controller, Admin용 CategoryController 클래스 생성
-  - templates/admin/category/list.html, form.html 생성
+  - dto, Category 클래스 생성 - [소스](./day12/studygroup/src/main/java/com/pknu26/studygroup/dto/Category.java)
+  - validation, CategoryForm 클래스 생성 - [소스](./day12/studygroup/src/main/java/com/pknu26/studygroup/validation/CategoryForm.java)
+  - mapper, CategoryMapper, StudyPostMapper 인터페이스, xml 생성 - [폴더](./day12/studygroup/src/main/resources/mapper/)
+  - service, CategoryService, StudyPostService 클래스 생성 - [폴더](./day12/studygroup/src/main/java/com/pknu26/studygroup/service/) <!--, CategoryServiceImpl, StudyPostServiceImpl -->
+  - controller, Admin용 CategoryController 클래스 생성 - [소스](./day12/studygroup/src/main/java/com/pknu26/studygroup/controller/CategoryController.java)
+  - templates/admin/category/list.html, form.html 생성 - [폴더](./day12/studygroup/src/main/resources/templates/admin/category/)
 
     ![alt text](image-36.png)
 
 - 스터디포스트 CRUD
-  - dto, StudyPost 클래스 생성
-  - mapper, StudyPostMapper 인터페이스, xml 생성
-  - validation, StudyPostForm 클래스 생성. dto, StudyPost 멤버변수 복사 사용
-  - service, StudyPostService 클래스 생성
-  - controller, StudyPostController 클래스 생성
-  - templates/post/list.html, form.html 생성
+  - dto, StudyPost 클래스 생성 - [소스](./day12/studygroup/src/main/java/com/pknu26/studygroup/dto/StudyPost.java)
+  - mapper, StudyPostMapper 인터페이스, xml 생성 - [소스](./day12/studygroup/src/main/java/com/pknu26/studygroup/mapper/StudyPostMapper.java)
+  - validation, StudyPostForm 클래스 생성. dto, StudyPost 멤버변수 복사 사용 - [소스](./day12/studygroup/src/main/java/com/pknu26/studygroup/validation/StudyPostForm.java)
+  - service, StudyPostService 클래스 생성 - [소스](./day12/studygroup/src/main/java/com/pknu26/studygroup/service/StudyPostService.java)
+  - controller, StudyPostController 클래스 생성 - [소스](./day12/studygroup/src/main/java/com/pknu26/studygroup/controller/StudyPostController.java)
+  - templates/post/list.html, form.html 생성 - [폴더](./day12/studygroup/src/main/resources/templates/post/)
 
   ![alt text](image-37.png)
 
@@ -68,22 +68,22 @@ StudyGroup
 #### 스터디 모집 기능
 
 - 스터디포스트 아래 댓글기능
-  - dto, Comment 클래스
-  - validation, CommentForm 클래스
-  - mapper, CommentMapper 인터페이스
-  - templates/mapper, CommentMapper.xml SQL
-  - service, CommentService 클래스
-  - controller, CommentController 클래스
+  - dto, Comment 클래스 - [소스](./day13/studygroup/src/main/java/com/pknu26/studygroup/dto/Comment.java)
+  - validation, CommentForm 클래스 - [소스](./day13/studygroup/src/main/java/com/pknu26/studygroup/validation/CommentForm.java)
+  - mapper, CommentMapper 인터페이스 - [소스](./day13/studygroup/src/main/java/com/pknu26/studygroup/mapper/CommentMapper.java)
+  - resources/mapper, CommentMapper.xml SQL - [소스](./day13/studygroup/src/main/resources/mapper/CommentMapper.xml)
+  - service, CommentService 클래스 - [소스](./day13/studygroup/src/main/java/com/pknu26/studygroup/service/CommentService.java)
+  - controller, CommentController 클래스 - [소스](./day13/studygroup/src/main/java/com/pknu26/studygroup/controller/CommentController.java)
   - controller, StudyPostController.detail() 댓글 목록, 폼 추가
   - html, post/detail.html 화면 추가
 
 - 스터디신청 기능
-  - dto, StudyApplication 클래스
-  - validation, StudyApplicataionForm 클래스
-  - mapper, StudyApplicationMapper 인터페이스
-  - templates/mapper, StudyApplication.xml
-  - service, StudyApplicationService 클래스
-  - controller, StudyApplicationController 클래스
+  - dto, StudyApplication 클래스 - [소스](./day13/studygroup/src/main/java/com/pknu26/studygroup/dto/StudyApplication.java)
+  - validation, StudyApplicataionForm 클래스 - [소스](./day13/studygroup/src/main/java/com/pknu26/studygroup/validation/StudyApplicationForm.java)
+  - mapper, StudyApplicationMapper 인터페이스 - [소스](./day13/studygroup/src/main/java/com/pknu26/studygroup/mapper/StudyApplicationMapper.java)
+  - resources/mapper, StudyApplicationMapper.xml - [소스](./day13/studygroup/src/main/resources/mapper/StudyApplicationMapper.xml)
+  - service, StudyApplicationService 클래스 - [소스](./day13/studygroup/src/main/java/com/pknu26/studygroup/service/StudyApplicationService.java)
+  - controller, StudyApplicationController 클래스 - [소스](./day13/studygroup/src/main/java/com/pknu26/studygroup/controller/StudyApplicationController.java)
   - html, post/detail.html 화면 추가
 
 ## 14일차
@@ -143,28 +143,28 @@ StudyGroup
 
 - 컨텐츠 관리
   - Stie 테이블
-  - dto, Site 클래스
-  - validation, SiteForm 클래스
-  - controller, SiteController 클래스
-  - mapper, SiteMapper 인터페이스
-  - templates/mapper, SiteMapper.xml
-  - service, SiteService 클래스
+  - dto, Site 클래스 - [소스](./day15/studygroup/src/main/java/com/pknu26/studygroup/dto/Site.java)
+  - validation, SiteForm 클래스 - [소스](./day15/studygroup/src/main/java/com/pknu26/studygroup/validation/SiteForm.java)
+  - controller, SiteController 클래스 - [소스](./day15/studygroup/src/main/java/com/pknu26/studygroup/controller/SiteController.java)
+  - mapper, SiteMapper 인터페이스 - [소스](./day15/studygroup/src/main/java/com/pknu26/studygroup/mapper/SiteMapper.java)
+  - resources/mapper, SiteMapper.xml - [소스](./day15/studygroup/src/main/resources/mapper/SiteMapper.xml)
+  - service, SiteService 클래스 - [소스](./day15/studygroup/src/main/java/com/pknu26/studygroup/service/SiteService.java)
   - controller, HomeController home 메서드 수정
 
   ![alt text](image-41.png)
 
 - 이미지 관리
-  - application.properties에 저장경로 설정!
-  - config, Fileproperties 클래스 추가
+  - application.properties에 저장경로 설정! - [소스](./day15/studygroup/src/main/resources/application.properties)
+  - config, FileProperties 클래스 추가 - [소스](./day15/studygroup/src/main/java/com/pknu26/studygroup/config/FileProperties.java)
 
     ![alt text](image-42.png)
 
-  - config, WebMvcConfig 클래스 추가
+  - config, WebMvcConfig 클래스 추가 - [소스](./day15/studygroup/src/main/java/com/pknu26/studygroup/config/WebMvcConfig.java)
   - Site_Image 테이블 생성
-  - dto, SiteImage 클래스
-  - validation, SiteImageForm 클래스
-  - mapper, SiteImageMapper 인터페이스
-  - resource/mapper, SiteImageMapper.xml
+  - dto, SiteImage 클래스 - [소스](./day15/studygroup/src/main/java/com/pknu26/studygroup/dto/SiteImage.java)
+  - validation, SiteImageForm 클래스 - [소스](./day15/studygroup/src/main/java/com/pknu26/studygroup/validation/SiteImageForm.java)
+  - mapper, SiteImageMapper 인터페이스 - [소스](./day15/studygroup/src/main/java/com/pknu26/studygroup/mapper/SiteImageMapper.java)
+  - resources/mapper, SiteImageMapper.xml - [소스](./day15/studygroup/src/main/resources/mapper/SiteImageMapper.xml)
 
 ## 16일차
 
@@ -173,10 +173,10 @@ StudyGroup
 #### 관리자 홈관리 중 이미지 처리
 
 - 이미지 관리 계속
-  - service, SiteImageService 클래스
-  - controller, SiteImageController 클래스
+  - service, SiteImageService 클래스 - [소스](./day16/studygroup/src/main/java/com/pknu26/studygroup/service/SiteImageService.java)
+  - controller, SiteImageController 클래스 - [소스](./day16/studygroup/src/main/java/com/pknu26/studygroup/controller/SiteImageController.java)
   - controller, HomeController home 메서드 수정
-  - templates/admin/siteImage list.html, form.html 작업
+  - templates/admin/siteimage list.html, form.html 작업 - [폴더](./day16/studygroup/src/main/resources/templates/admin/siteimage/)
 
   ![alt text](image-43.png)
 
@@ -249,7 +249,7 @@ https://github.com/user-attachments/assets/4d4fa37e-b8b7-4adf-913c-e2e97cd8922f
 
 #### Spring Security 개발
 
-- build.gradle 의존성 추가
+- build.gradle 의존성 추가 - [소스](./day17/studygroup/build.gradle)
 - 실행화면
 
   ![alt text](image-46.png)
@@ -289,14 +289,14 @@ This generated password is for development use only. ~
 
 #### 진행순서
 
-- build.gradle 의존성 추가
-- application.properties JWT 설정 추가
-- config, JwtProvider 클래스 생성
+- build.gradle 의존성 추가 - [소스](./day18/studygroup/build.gradle)
+- application.properties JWT 설정 추가 - [소스](./day18/studygroup/src/main/resources/application.properties)
+- config, JwtTokenProvider 클래스 생성 - [소스](./day18/studygroup/src/main/java/com/pknu26/studygroup/config/JwtTokenProvider.java)
 
-- dto/api, API를 요청/응답용 dto 생성
-- security, JwtAuthenticationFilter 클래스 생성
-- controller, ApiAuthControiller 클래스 생성
-- config, SecurityConfig 수정
+- dto/api, API를 요청/응답용 dto 생성 - [폴더](./day18/studygroup/src/main/java/com/pknu26/studygroup/dto/api/)
+- security, JwtAuthenticationFilter 클래스 생성 - [소스](./day18/studygroup/src/main/java/com/pknu26/studygroup/security/JwtAuthenticationFilter.java)
+- controller, ApiAuthController 클래스 생성 - [소스](./day18/studygroup/src/main/java/com/pknu26/studygroup/controller/api/ApiAuthController.java)
+- config, SecurityConfig 수정 - [소스](./day18/studygroup/src/main/java/com/pknu26/studygroup/config/SecurityConfig.java)
 
 - 테스트 콘트롤러
 
@@ -304,7 +304,195 @@ This generated password is for development use only. ~
 
 ### JWT 계속
 
-### 구글 로그인
+#### CORS, CSRF
+
+- CORS: Cross-Origin Resource Sharing 프로토콜
+  - 서로다른 오리진(서버)에서 리소스나 상호작용을 위해 브라우저에서 실행되는 스크립트
+  - 서버간에 통신시 기본 보호 기능
+  - com.pknu26.studygroup, com,pknu26.apiboard 둘 사이에 접근 불가
+  - CORS로 오픈 설정 후
+
+- CSRF: Cross-Site Request Forgery 보안
+  - 명시적 동의없이 사용자를 대신 웹앱에서 악의적인 행동을 취하는 공격
+
+#### API 테스트
+
+- Postman 테스트
+
+  ![alt text](image-48.png)
+  - 로그인 실패하면 로그인화면으로 다시 돌아감
+  - 성공하면 json을 리턴
+
+  ```json
+  {
+    "tokenType": "Bearer",
+    "accessToken": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJwa251IiwidXNlcklkIjoxLCJuYW1lIjoi6rmA7Zi47ISxIiwicm9sZSI6IlJPTEVfVVNFUiIsImlhdCI6MTc3NzM0NTA2OSwiZXhwIjoxNzc3MzQ4NjY5fQ.vzRG6ifXRcERpXZ34u2sHGSXIgLD7gf6HxGqWDkhTlhS-54M4KwskWBRlIJ6hTgO",
+    "userId": 1,
+    "loginId": "pknu",
+    "name": "김호성",
+    "role": "ROLE_USER"
+  }
+  ```
+
+### 소셜 로그인
+
+#### 구글 로그인
+
+```text
+USER_ACCOUNT
+ └─ 우리 서비스 사용자 계정
+
+Spring Security Form Login
+ └─ /user/login
+
+JWT API Login
+ └─ /api/auth/login
+
+추가할 Google Login
+ └─ /oauth2/authorization/google
+ └─ 성공 후 USER_ACCOUNT + USER_SOCIAL_ACCOUNT 저장
+```
+
+#### OAuth
+
+- Open Authorization: 아이디와 패스워드를 넘겨주지 않고, 다른 서비스의 기능을 안전하게 빌려쓰는 기술
+  - 구글, 네이버, 카카오, 페이스북, ...
+
+- OAuth 1.0: 암호화방식 너무 복잡(암호화 지옥), 사용하기 어려움.
+- OAuth 2.0: 복잡한 서명 삭제, 역할분담, 유연한 처리 가능
+
+#### 소셜 로그인 구현
+
+- build.gradle에 의존성 추가 - [소스](./day18/studygroup/build.gradle)
+- 구글 개발자콘솔 로그인: https://console.cloud.google.com/
+  - 새 프로젝트 생성
+
+  ![alt text](image-49.png)
+  - 프로젝트 선택 > 탐색메뉴(햄버거 메뉴)
+  - API 및 서비스
+    - 사용자 인증 정보 > +사용자 인증정보 만들기 클릭
+  - OAuth 동의화면 클릭 > 시작하기 클릭
+  - OAuth 클라이언트 ID 클릭
+
+  ![alt text](image-50.png)
+  - 작성 후 만들기 클릭
+
+  ![alt text](image-51.png)
+  - json 다운로드
+
+- application.properties 구글 OAuth 정보 추가 - [소스](./day18/studygroup/src/main/resources/application.properties)
+
+- powershell에서 구글 클라이언트 아이디 & 비밀키를 OS에 저장
+
+  ```powershell
+  # 설정
+  > setx GOOGLE_CLIENT_ID "생성된 구글 클라이언트 ID"
+
+  성공: 지정한 값을 저장했습니다.
+  > setx GOOGLE_CLIENT_SECRET "구글 클라이언트 SECRET"
+
+  성공: 지정한 값을 저장했습니다.
+
+  # 확인 파워쉘 재시작 후
+  > echo $env:GOOGLE_CLIENT_ID
+  > echo $env:GOOGLE_CLIENT_SECRET
+  ```
+
+- 소셜 로그인 연결용 테이블 생성
+- 기존 로그인 테이블 password 필드 NOT NULL -> NULL로 변경(소셜로그인으로는 패스워드 전달 안됨)
+- LOGIN_ID 길이 변경 VARCHAR2(200), 이메일 입력
+
+- dto, UserSocialAccount 클래스 - [소스](./day20/studygroup/src/main/java/com/pknu26/studygroup/dto/UserSocialAccount.java)
+- mapper, UserSocialAccountMapper 인터페이스 - [소스](./day20/studygroup/src/main/java/com/pknu26/studygroup/mapper/UserSocialAccountMapper.java)
+- resources/mapper, UserSocialAccountMapper.xml - [소스](./day20/studygroup/src/main/resources/mapper/UserSocialAccountMapper.xml)
+- mapper, UserMapper 인터페이스에 신규 메서드 추가 - [소스](./day18/studygroup/src/main/java/com/pknu26/studygroup/mapper/UserMapper.java)
+- resources/mapper, UserMapper.xml 신규 SQL 추가 - [소스](./day18/studygroup/src/main/resources/mapper/UserMapper.xml)
+
+- OAuth2 구글로그인서비스 클래스
+  - security, CustomOAuth2UserService 클래스 - [소스](./day20/studygroup/src/main/java/com/pknu26/studygroup/security/CustomOAuth2UserService.java)
+    1. 구글 사용자 정보받기
+    2. proivider = google
+    3. providerUserId = 구글 Subject
+    4. USER_SOCIAL_ACCOUNT 테이블에 이미 정보가 있으면 로그인처리
+    5. 없으면 USER_ACCOUNT 생성
+    6. USER_SOCIAL_ACCOUNT 생성
+    7. Spring Security 인증 처리
+
+- config, SecurityConfig에 OAuth2 Login 추가 - [소스](./day18/studygroup/src/main/java/com/pknu26/studygroup/config/SecurityConfig.java)
+
+  ![alt text](image-52.png)
+
+- Google 환경 로그
+
+  ![alt text](image-53.png)
+
+- 구글 로그인
+
+  ![alt text](image-54.png)
+
+  ![alt text](image-55.png)
+
+#### 수정할 소스
+
+- application.properties 구글 프로필 설정 변경 - [소스](./day18/studygroup/src/main/resources/application.properties)
+
+  ```properties
+  spring.security.oauth2.client.registration.google.scope=email,profile
+  ```
+
+- build.gradle OAuth2 설정 변경 - [소스](./day18/studygroup/build.gradle)
+
+  ```groovy
+  // implementation 'org.springframework.boot:spring-boot-starter-security-oauth2-client'
+  implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+  ```
+
+- mapper, UserMapper.java 메서드 오타 - [소스](./day18/studygroup/src/main/java/com/pknu26/studygroup/mapper/UserMapper.java)
+
+  ```java
+  void insertSocialUser(User user);  // insertSocialuser -> insertSocialUser
+  ```
+
+- resources/mapper, UserMapper.xml에 password NULL 처리 - [소스](./day18/studygroup/src/main/resources/mapper/UserMapper.xml)
+
+  ```xml
+  <insert id="insertSocialUser" parameterType="User">
+      -- password null 처리
+      INSERT INTO USER_ACCOUNT (
+          USER_ID,
+          LOGIN_ID,
+          PASSWORD,
+          NAME,
+          ROLE,
+          CREATED_AT
+      ) VALUES (
+          #{userId},
+          #{loginId},
+          null,
+          #{name},
+          #{role},
+          SYSDATE
+      )
+  </insert>
+  ```
+
+- security, CustomOAuth2UserDetails 클래스 추가 : [소스](./day20/studygroup/src/main/java/com/pknu26/studygroup/security/CustomOAuth2UserDetails.java)
+
+- security, CustomOAuth2UserService 클래스 loadUser 메서드 리턴값 변경 - [소스](./day20/studygroup/src/main/java/com/pknu26/studygroup/security/CustomOAuth2UserService.java)
+
+  ```java
+  // Spring Security가 객체를 사용할 수 있도록 리턴
+  // 260430. DefaultOAuth2UserDetail -> CustomOAuth2UserDetails 변경해야 세션저장
+  return new CustomOAuth2UserDetails(
+          user,
+          List.of(new SimpleGrantedAuthority(user.getRole())),
+          attributes,
+          "name"); // sub -> name
+  ```
+
+- 구글로그인은 크롬 설정에서 쿠키 삭제 후 테스트
+
+- 실행결과
 
 #### 남은 이슈
 
@@ -324,6 +512,7 @@ This generated password is for development use only. ~
   - 현재화면
 
 - [x] 세군데 있던 checkAdmin 메서드 정리. AdminHelper 클래스 생성
+- [ ] 용량이 큰 이미지(4.5MB 정도)를 붙여넣은 후 저장 오류
 
 - home.html 동작 바인딩
 - Spring Security
